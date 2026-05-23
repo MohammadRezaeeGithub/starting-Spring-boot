@@ -1,0 +1,5 @@
+TO SEARCH FIEL: command + shift + O
+TO ADD A DEPENDENCY : COMMAND + N in pom.xml file
+TO AUTOMATIC REBUILD : SPRING-BOOT-DEVTOOLS (a dependency)
+            settings->compiler->build project automatically
+            setting->advanced setting-> allow auto-make to start...
