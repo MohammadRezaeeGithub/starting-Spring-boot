@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 //when there are multiple candidates for wiring the dependencies,we add another annotation to say that this class should be chosen first
 //@Primary annotation tell spring boot to use this class when he does wiring
-@Service("paypal")
+//@Service("paypal")
 public class PayPalPaymentService implements PaymentService{
 
     @Override

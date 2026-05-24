@@ -3,7 +3,7 @@ package com.mohammadrezaee.store;
 
 import org.springframework.stereotype.Service;
 
-@Service("stripe")
+//@Service("stripe")
 public class StripPaymentService implements PaymentService {
 
     @Override
