@@ -75,6 +75,17 @@
 
     <build>
         <plugins>
+<!--            this plugin is used to run the migration without runnig the application-->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true</url>
+                    <user>root</user>
+                    <password>Matrix@261370</password>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
