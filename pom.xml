@@ -71,6 +71,14 @@
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-mysql</artifactId>
         </dependency>
+<!--add this depenency helps us not write every time the getters, setters
+,constructerus and all the otheres utility in the Entities-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+<!--            when we use it for the first time, we have to enable ANNOTATION PROCESSING-->
+            <scope>annotationProcessor</scope>
+        </dependency>
     </dependencies>
 
     <build>
