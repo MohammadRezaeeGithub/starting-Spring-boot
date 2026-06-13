@@ -1,5 +1,8 @@
 package com.mohammadrezaee.store;
 
+import com.mohammadrezaee.store.entities.Address;
+import com.mohammadrezaee.store.entities.Tag;
+import com.mohammadrezaee.store.entities.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -11,8 +14,14 @@ public class StoreApplication {
 
         ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
         //we let spring boot do the job for us(creating the object and injecting all dependencies wiring)
-        var orderService = context.getBean(OrderService.class);
-        orderService.placeOrder();
+        var user = User.builder()
+                .name("Mohammad")
+                .email("mohammad@gmail.com")
+                .password("123456")
+                .build();
+
+        user.addTag("tag1");
+        System.out.println(user);
     }
 
 }
