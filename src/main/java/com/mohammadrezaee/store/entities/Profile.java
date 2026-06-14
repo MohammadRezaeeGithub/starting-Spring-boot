@@ -2,13 +2,16 @@ package com.mohammadrezaee.store.entities;
 
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Setter
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "profiles")
 public class Profile {
@@ -28,5 +31,13 @@ public class Profile {
 
     @Column(name = "loyalty_points")
     private Integer loyaltyPoints;
+
+    //defining one to one relationship with user
+    //since the profile knows about user(forign key) and user does not know anything about profile -> profile is the owner of the relationship
+    @JoinColumn(name = "id")
+    @OneToOne
+    @MapsId //this is only for one to one relationship and we have to add it to the owner of the relationship
+    @ToString.Exclude
+    private User user;
 
 }

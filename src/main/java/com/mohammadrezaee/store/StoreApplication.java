@@ -1,6 +1,7 @@
 package com.mohammadrezaee.store;
 
 import com.mohammadrezaee.store.entities.Address;
+import com.mohammadrezaee.store.entities.Profile;
 import com.mohammadrezaee.store.entities.Tag;
 import com.mohammadrezaee.store.entities.User;
 import org.springframework.boot.SpringApplication;
@@ -20,7 +21,11 @@ public class StoreApplication {
                 .password("123456")
                 .build();
 
-        user.addTag("tag1");
+        var profile = Profile.builder()
+                        .bio("bio")
+                                .build();
+        user.setProfile(profile);
+        profile.setUser(user);
         System.out.println(user);
     }
 

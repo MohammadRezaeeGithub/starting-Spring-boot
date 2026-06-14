@@ -76,4 +76,9 @@ public class User {
         tags.add(tag);
         tag.getUsers().add(this );
     }
+
+    //defining one to one relationship
+    //since we make the profile the owner of this relationship, we have to add mappedBy="user" here
+    @OneToOne(mappedBy = "user")
+    private Profile profile;
 }
